@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./SignupPhase.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="container bg-primaryy" style="background-color: #001a2f;">
+        <div class="row">
+            <div class="col-md-5 d-none d-md-block">
+                <nav class="navbar navbar-expand-lg navbar-light bg-pri'mary">
+                    <a class="navbar-brand text-white pb-5" href="#">MY QUIZ</a>
+                </nav>
+                <!-- <h2 class="mockupworld text-white pt-5">ALAT by Wema</h2> -->
+                <em class="bestfree text-white pt-5">Your best free TECH QUIZ App.</em>
+                <img style="width: 70%;box-shadow: 5px 5px 5px 5px #001a2f;border-radius: 20px;padding-top: 40px;height: 60%;" src="./TechQuiz GIF.gif" alt="">
+            </div>
+            <div class="container1 text-sm-center text-center col-md-7 bg-light">
+                <h3 class="create pb-4 pl-4">Create a new Account</h3>
+                <form>
+                    <div class="form-row pl-5 pt-2" style="padding-left: 100px!important;">
+                      <div class="col-md-5 col-xsm-12 pb-2 m-aumto">
+                        <div class="input-group-prepend">
+                            <span class="input-group-icon">
+                                <img style="width: 20px;position: absolute; top: 20%;left: 5%;" src="./Google logo.jpg" alt="">
+                            </span>
+                            <input type="email" class="form-control" placeholder="Sign up with Google" style="padding-left: 40px;">
+                        </div>
+                        
+                      </div>
+                      <div class="col-md-5 col-xsm-12">
+                        <div class="input-group-prepend">
+                            <span class="input-group-icon">
+                                <img style="width: 20px;position: absolute; top: 20%;left: 5%;" src="./facebook logo.png" alt="">
+                            </span>
+                        <input type="email" class="form-control" placeholder="Sign up with Facebook" style="padding-left: 40px;">
+                      </div>
+                    </div>
+                </form>
+               
+            </div>
+            <p>
+                <small class="text-muted pl-2 mb-0 "> < OR > </small>
+            </p>
+            <form class="text-left m-auto"  style="width: 60%;font-size: 13px;">
+                <div class="row">
+                  <label for="form-group-input">The name is how it appears on your web page</label>
+                  <div class="form-group mb-1 mt-0 text-left col-md-6">
+                    <input type="text" class="form-control" id="form-group-input" placeholder="First name">
+                  </div><div class="form-group mb-1 mt-0 text-left col-md-6">
+                    <input type="text" class="form-control" id="form-group-input1" placeholder="Last name">
+                  </div>
+                </div>
+                <p id="nameerror"></p>
+                <div class="form-group mb-1">
+                  <label for="form-group-input2">Enter your email address</label>
+                  <input type="email" class="form-control" id="form-group-input2" placeholder="Adeola@gmail.com">
+                </div>
+                <div class="form-group mb-1">
+                    <label for="form-group-phone">Phone Number</label>
+                    <input  type="phonenumber" class="form-control" id="form-group-phone" placeholder="+234">
+                  </div>
+                  <p id="phonedemo"></p>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Create a Password</label>
+                    <div class="input-group">
+                      <!-- <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          
+                        </span>
+                      </div> -->
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Input Strong Password">
+  
+                      <div class="input-group-append">
+                        <span id="show" class="input-group-text" onclick="showPasswrd('text')" style="cursor: pointer;">
+                          <i class="fas fa-eye" aria-hidden="true"></i>
+                        </span>
+                        <span  id="hide" class="input-group-text d-none" onclick="showPasswrd()" style="cursor: pointer;">
+                          <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <!-- <label for="exampleInputPassword1"></label>
+                    <small id="passW" class="form-text text-muted"></small> -->
+                  </div>
+                  <div class="form-group">
+                        <label for="exampleInputPassword1">Confirm Password</label>
+                    <div class="input-group">
+                      <!-- <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          CPassword
+                        </span>
+                      </div> -->
+                      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password">
+                      <div class="input-group-append">
+                        <span id="showCP" class="input-group-text" onclick="confirmP('text')" style="cursor: pointer;">
+                          <i class="fas fa-eye" aria-hidden="true"></i>
+                        </span>
+                        <span id="hideCP" class="input-group-text d-none"  onclick="confirmP()" style="cursor: pointer;">
+                          <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                    </div>
+                        <!-- <label for="exampleInputPassword1"></label>
+                        <small id="cPassW" class="form-text text-muted"></small> -->
+                    </div>
+                  <button onclick="createAccount()" type="button" class="btn btn-primary d-block" style="float: right;"><small>Create Account</small></button>
+            </form><br>
+              <p class="pt-3 pl-5"><small>Already have an account? <a class="c-primary" href="./LoginPhase.html" style="text-decoration: none;" onclick="login()" type="button">Log in</a></small></p>
+            </div>
+       
+        </div>
+        
+    </div>
+
+    <script src="./SignupPhase.js"></script>
+     <!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    let passwordInput = document.getElementById("exampleInputPassword1");
+    let confirmPassword = document.getElementById("exampleInputPassword2");
+    let inputName = document.getElementById("form-group-input");
+    let inputName1 = document.getElementById("form-group-input1");
+    let inputEmail = document.getElementById("form-group-input2");
+    let phoneNo = document.getElementById("form-group-phone");
+    let phonedemo = document.getElementById("phonedemo");
+    let nameerror = document.getElementById("nameerror");
+
+    
+    // if (phoneNo.value > 1){
+    //     console.log('Successful Login');
+    // }else if(phoneNo.value == ""){
+    //     console.log('You can\'t login an empty field please')
+    // }
+    // else{
+    //     console.log('You have input a wrong information, please check')
+    // }
+
+
+
+    function createAccount(){
+      if(localStorage.getItem('users') == null) {
+      localStorage.setItem('users', JSON.stringify([{
+        name: "Admin",
+        email: "admin@admin.com",
+        phoneNo: 08121253150,
+        password: 123456789,
+        userType: 'admin'
+      }]))
+    } else {
+      let records = JSON.parse(localStorage.getItem('users'));
+      if(records.some(el => el.email == 'admin@admin.com' || el.name.toLowerCase() == 'admin') == false) {
+        records.push({
+          name: "Admin",
+          email: "admin@admin.com",
+          phoneNo: 08121253150,
+          password: 123456789,
+          userType: 'admin'
+        })
+      }
+      localStorage.setItem('users', JSON.stringify(records))
+    }
+        let data = {
+            name: inputName.value,
+            Lname: inputName1.value,
+            email: inputEmail.value,
+            phoneNo: phoneNo.value,
+            password: passwordInput.value,
+            userType: 'user'
+        }
+        var localStorageData = JSON.parse(localStorage.getItem("users"))
+        let arr = [];
+        let userName = {}
+
+        if ((inputName.value == "" || inputEmail.value == "") || (confirmPassword.value == "" || passwordInput.value == "") || (phoneNo.value == "")){
+            return swal({
+                title: "Error",
+                icon: "warning",
+                text: "Empty data cannot be submitted"
+            });
+           
+        }
+        else if(confirmPassword.value !== passwordInput.value){
+                return swal({
+                    title: "Password do not match",
+                    icon: "warning"
+                })
+            
+
+            }
+            else{
+                if(localStorageData == null){
+                    arr.push(data)
+                }
+                else{
+                    arr = localStorageData
+                    if(arr.some(el => el.email == data.email)) {
+                      return swal({
+                        title: "Email already exist",
+                        icon: "warning"
+                      })
+              }
+                    arr.push(data)
+                } 
+                localStorage.setItem("users", JSON.stringify(arr))
+                window.location.assign("LoginPhase.html")
+                // localStorage.setItem('authUser', JSON.stringify(userName))
+            }
+
+            if (inputName == ""){
+              nameerror.innerHTML = ""
+            }
+    }
+
+
+
+    function showPasswrd(p='password'){
+    if (p =='text') {
+        passwordInput.setAttribute("type", "text")
+        document.getElementById("hide").classList.remove('d-none')
+        document.getElementById("show").classList.add('d-none')
+     
+    } else {
+      document.getElementById("hide").classList.add('d-none')
+      document.getElementById("show").classList.remove('d-none')
+      passwordInput.setAttribute("type", "password")
+    }
+    
+  }
+
+  function confirmP(a='password'){
+    if(a =='text'){
+      confirmPassword.setAttribute("type", "text")
+      document.getElementById("hideCP").classList.remove('d-none')
+      document.getElementById("showCP").classList.add("d-none")
+    }
+    else{
+      confirmPassword.setAttribute("type", "password")
+      document.getElementById("showCP").classList.remove('d-none')
+      document.getElementById("hideCP").classList.add("d-none")
+    }
+  }
+
+        
+     
+  
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url(./images.jpg);
+}
+.container{
+    margin: 7vh;
+    /* height: 85vh; */
+    background-color: #001a2f;
+    box-shadow: 5px 5px 5px 5px #001a2f;
+    
+}
+.navbar-brand{
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: rgb(0, 81, 255) !important;
+}
+.mockupworld{
+    /* opacity: 0.5; */
+    color: #001a2f;
+}
+.bestfree{
+    font-size: 25px;
+    color: rgb(0, 81, 255) !important;
+}
+.d{
+    /* height: 85vh; */
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    /* background-image: url(./QUIZ\ text); */
+    /* background-size: cover; */
+}
+    /* .create{
+        color: rgb(0, 81, 255);
+        padding-top: 65px;
+    } */
+/* body{
+    background-image: url(./);
+}
+.container1{
+    background-color: rgb(0, 81, 255);
+    padding: 4rem 0rem 4rem 0rem;
+    background-image: url(./iStock-684059604.jpg);
+    background-size: cover;
+    opacity: 0.8;
+}
+#Quiz{
+    color: #ffffff;
+    font-size: 7rem;
+}
+.fa-pen{
+    font-size: 5rem;
+}
+
+.box{
+    border: blue 2px solid;
+    height: 330px;
+    width: 90%;
+    box-shadow: 5px 5px 5px 5px rgb(0, 81, 255);
+    border-radius: 20px;
+    background-image: url(./Educational-Goals\ image.jpg);
+    background-size: cover;
+
+} */

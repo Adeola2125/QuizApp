@@ -1,0 +1,87 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    /* background-color: rgb(0, 81, 255) !important; */
+    /* background-image: url(./Quiz\ logo6.jpg); */
+    background-color: #001a2f !important;
+    /* opacity: 0.2 !important; */
+    background-size: cover;
+}
+.navbar-brand{
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: rgb(0, 81, 255) !important;
+}
+.nav-link{
+    color: rgb(0, 81, 255) !important;
+}
+.dropdown-item{
+    color: rgb(0, 81, 255) !important;
+}
+.dropdown-item:hover{
+    background-color: rgb(0, 81, 255) !important;
+    color: #ffffff !important;
+}
+.simplequiz{
+    /* padding-top: 8rem; */
+    font-size: 6vw;
+    animation-name: animate__flip;
+    text-shadow: 0px 5px 4px;
+}
+.simplequiz {
+    /* background: red; */
+    position: relative;
+    animation-name: example;
+    animation-duration: 3s;  
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes example {
+    from {top: 0px;}
+    to {top: 8rem;}
+  }
+  hr{
+      border: 3px solid yellow !important;
+      top: 8rem;
+      position: relative;
+      width: 10%;
+      left: 35rem;
+  }
+  .text{
+    position: relative;
+    top: 8rem;
+    letter-spacing: 10px;
+  }
+  .buttons{
+      position: relative;
+      top: 16rem;
+  }
+  .button{
+    color: #ffffff;
+    background-color: #191c24;
+    border: 1px solid rgb(0, 81, 255) !important;
+  }
+  .button:hover{
+    background-color: rgb(0, 81, 255);
+  }
+.goodluck{
+    color: blue;
+    font-weight: bold;
+}
+.clientCategorySelect{
+    position: relative;
+    top: 14rem;
+}
+.totalCategory{
+    position: relative;
+    top: 15rem;
+}
+#Norecords{
+    color: #ffffff;
+    font-size: 15px;
+    position: relative;
+    top: 15rem;
+    text-align: center;
+}

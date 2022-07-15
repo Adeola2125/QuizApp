@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY QUIZ</title>
+    <link rel="stylesheet" href="./dashboard2.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="container-fluid px-3 m-0 p-0">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand pl-5" href="#">MY QUIZ</a>
+            <!-- <p class=" text-primary">DASHBOARD</p> -->
+            <li class="row nav-item dropdown ml-auto">
+                <img style="width: 50px; height: 50px; border-radius: 100%;" src="./Quiz logo.jpg" alt="">
+                <a class="nav-link1 dropdown-toggle text-dark pt-3 pl-3" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false"></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="./LoginPhase.html">LOGOUT <i class="fas fa-power-off text-primary" aria-hidden="true"></i></a>
+                </div>
+                <span class="pt-3 pl-2" style="font-size: 15px;">ADMIN</span>
+              </li>
+          </nav>
+          <div class="row pt-5">
+            <div class="col-md-2 pt-5" style="border-right: 1px solid white;">
+              <div class="pt-3 text-white">
+                <div class="col-sm-12" style="padding-left: 70px;">
+                    <img style="width: 50px; height: 50px; border-radius: 100%;" src="./Quiz logo.jpg" alt="">
+                </div>
+                <div class="col-sm-12 mt-2 text-center">
+                    <h5 id="adminName"></h5>
+                    <p class="">Web Developer</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-10 pt-5 text-white" style="background-color: #001a2f;">
+              <h5><i class="fa fa-home mr-2" aria-hidden="true"></i> DASHBOARD</h5>
+                <div class="row mt-3">
+                    <div class="col-md-8">
+                      <h4 id="username"></h4>
+                      <p>All systems are running smoothly!</p>
+                    </div>
+                  
+                  <div class="col-md-4">
+                      <p class="ml-auto" id="clock"></p>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="row" style="height: 100vh;">
+            <div class="col-md-2 bg-light text-dark">
+              <h6 style="background-color: #ffffff; font-size: small;" class="text-center text-muted mt-5"><span style="border-radius: 15%;">MODULE</span></h6>
+            <ul class="navbar-nav pt-3 text-dark" style="font-size: 14px;">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./dashboard2.html"><i class="fa fa-home mr-2" aria-hidden="true"></i>DASHBOARD</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./categoryModule.html"><i class="fa fa-bars" aria-hidden="true"></i> MANAGE CATEGORY <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./manageQuiz.html"><i class="fa fa-tasks mr-2" aria-hidden="true"></i> MANAGE QUIZ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa fa-star mr-2" aria-hidden="true"></i> ACTIVATE QUIZ</a>
+                </li>
+              </ul>
+              <hr style="background-color: #001a2f;">
+          </div>
+              <div class="col-md-10 text-white" style="background-color: #001a2f;">
+                <!-- <h5><i class="fa fa-graduation-cap" aria-hidden="true"></i> CATEGORY MODULE</h5>
+                  <div class="row mt-3">
+                      <div class="col-md-8">
+                        <h4 id="username"></h4>
+                        <p>All systems are running smoothly!</p>
+                      </div>
+                    
+                    <div class="col-md-4">
+                        <p class="ml-auto" id="clock"></p>
+                    </div>
+                  </div> -->
+                  <div class="row mt-4 text-white">
+                    <div class="col-sm-3">
+                        <div class="card card1">
+                          <div class="card-body">
+                            <h5 class="card-title number" id="catCount">0</h5>
+                            <p class="card-text text-white">Total Categories.</p>
+                            <!-- <a href="#" class="btn btn-white">Go somewhere</a> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-3">
+                        <div class="card card1">
+                          <div class="card-body">
+                            <h5 class="card-title number" id="live">0</h5>
+                            <p class="card-text text-white">Total Live Quiz.</p>
+                            <!-- <a href="#" class="btn btn-white">Go somewhere</a> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-3">
+                          <div class="card card1">
+                            <div class="card-body">
+                              <h5 class="card-title number" id="notLive">0</h5>
+                              <p class="card-text text-white">Total Not~Live.</p>
+                              <!-- <a href="#" class="btn btn-white">Go somewhere</a> -->
+                            </div>
+                          </div>
+                        </div>
+                      <div class="col-sm-3">
+                        <div class="card card1">
+                          <div class="card-body">
+                            <h5 class="card-title number" id="">0</h5>
+                            <p class="card-text text-white">Total Not~Live.</p>
+                            <!-- <a href="#" class="btn btn-white">Go somewhere</a> -->
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  
+                  <!-- <img src="./GIFi001.webp" class="w-100 mt-3" style="height: 300px;" alt=""> -->
+              </div>
+          </div>
+    </div>
+     <!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /search for elements with a certain atrribute:/
+      file = elmnt.getAttribute("adeola-include-html");
+      if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+       
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            /* Remove the attribute, and call this function once more: */
+            elmnt.removeAttribute("adeola-include-html");
+            includeHTML();
+          }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.withCredentials = false;
+
+        // xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xhttp.send();
+        /* Exit the function: */
+        return;
+      }
+    }
+  }
+</script>
+
+<script>
+    let modal = document.getElementById("modal");
+    let categoryName = document.getElementById("categoryName");
+    let categoryModalName = document.getElementById("categoryModalName");
+    let categoryStatus = document.getElementById("categoryStatus");
+    let categoryModalStatus = document.getElementById("categoryModalStatus");
+    let catCount = document.getElementById("catCount");
+    let tbody = document.getElementById("tbody");
+    let xy = "";
+
+    function RefetchData(){
+        var myData = JSON.parse(localStorage.getItem("myData")) || null;
+        if(myData !== null) {
+            // console.log(myData);
+            // tbody.innerHTML = "";  
+            // catCount = 0;  
+            // let notLive = 1;
+            // let Live = 1;   
+        
+            // myData.forEach((element, a) => {
+            //     catCount = Number(a + 1);
+               
+            //     if(element.status == "NOT LIVE"){
+            //         console.log(element.status);
+            //         document.getElementById("notLive").innerHTML = notLive++
+            //     };
+            //     if(element.status == "LIVE"){
+            //         console.log(element.status);
+            //         document.getElementById("live").innerHTML = Live++
+            //     }
+            // });
+            document.getElementById("catCount").innerHTML = myData.length
+        }
+    }
+    RefetchData()
+
+    // function addCategories(){
+    //     let catData = JSON.parse(localStorage.getItem("myData")) || null;
+    //     let status = false
+    //     let duplicateStatus = false
+
+    //     if(categoryName.value == "" || categoryStatus.value == ""){
+    //         return swal({
+    //             title: "Please set category",
+    //             icon: "warning"
+    //         }); 
+    //     }
+    //     let data = {
+    //         id: Math.floor(Math.random() * 1000000),
+    //         name: categoryName.value,
+    //         status: categoryStatus.value,
+    //         userType: "Admin",
+    //         catCount: catCount.innerHTML
+    //     }
+        
+        
+    //     let arr = [];
+    //     if(catData == null){
+    //            arr.push(data)
+    //        }
+    //        else{
+    //         arr = catData
+    //            for(let i = 0; i < arr.length; i++){
+    //                if(data.name == arr[i].name && data.status == arr[i].status){
+    //                    status = true
+    //                }
+    //            }
+    //            if(status) {
+    //                 return swal({
+    //                    title: "Duplicate Entry Detected"
+    //                });
+    //             }
+               
+    //             else{
+    //                 arr.push(data)
+    //             }
+    //        }
+           
+    //        localStorage.setItem('myData', JSON.stringify(arr))
+    //        Refetch()
+    // }
+    // function deleteAction(a){
+    //         // alert(a);
+    //         swal({
+    //             title: "Are you sure?",
+    //             text: 'Item will be deleted from list!',
+    //             icon: "warning",
+    //             buttons: true,
+    //             dangerMode: true
+    //        } )
+    //         .then ((willDelete) => {
+    //          if (willDelete) {
+
+    //                 var catData = JSON.parse(localStorage.getItem('myData'));
+
+    //                 if(catData){
+    //                     catData.splice(a, 1)
+    //                     localStorage.setItem('myData', JSON.stringify(catData))
+    //                 }
+    //                 Refetch()
+    //                 swal("Item Deleted!", {
+    //                     icon: "success",
+    //                 });
+            
+    //             }
+    //             else {
+    //                 Refetch()
+    //                 swal("Item still in cart!")
+    //             }
+    //         });
+    //     }
+    //     function editAction(ind){
+    //         xy = ind;
+    //         // alert(xy);
+    //         let value = "";
+    //         let data = {
+    //             name: categoryName.value,
+    //             status: categoryStatus.value,
+    //         }
+
+    //         var catData = JSON.parse(localStorage.getItem('myData'));
+            
+    //         for(let i = 0; i < catData.length; i++){
+    //             if(catData[i].id == ind){
+    //                 value = catData[i]
+    //             }
+    //         }
+    //         categoryModalName.value = value.name;
+    //         categoryModalStatus.value = value.status;
+    //         Refetch()
+            
+    //     }
+    //     function updateButton(){
+    //         // let inputValue = document.getElementById("todoInput");
+    //         let data = {
+    //             name: categoryName.value,
+    //             status: categoryStatus.value,
+    //         }
+    //         // alert(xy)
+
+    //         let catData = JSON.parse(localStorage.getItem('myData'));
+    //         if (categoryModalName.value == "" || categoryModalStatus.value == ""){
+    //             return swal({
+    //                 title: "Cannot update empty category",
+    //                 icon: "warning"
+    //             })
+    //         }
+    //         else{
+    //             // alert('Working')
+    //             for(let i = 0; i < catData.length; i++){
+    //                 if(catData[i].id == xy){
+    //                     catData[i].name = categoryModalName.value;
+    //                     catData[i].status = categoryModalStatus.value;
+    //                 }
+    //             }
+    //             categoryModalName.value = "";
+    //             categoryModalStatus.value = "";
+    //         }
+    //         localStorage.setItem("myData", JSON.stringify(catData));
+    //         Refetch()
+
+    //     }
+
+        const clock = document.getElementById("clock");
+        const tick = () =>{
+            const time = new Date()
+            const h = time.getHours();
+            const m = time.getMinutes();
+            const s = time.getSeconds();
+
+            const myTime =
+            `<span>${time}</span>`
+            clock.innerHTML = myTime
+        }
+        setInterval(tick, 1000)
+
+        // var userName = document.getElementById("username")
+        var adminName = document.getElementById("adminName")
+        let auth = JSON.parse(localStorage.getItem("authUser"))
+       if(auth){
+        //  userName.innerHTML =`<em>Welcome</em> ${auth.name}`
+         adminName.innerHTML = auth.name
+       }
+       else{
+           window.location.assign("SignupPhase.html")
+       }
+
+       var adminName = document.getElementById("adminName")
+       let adminAuth = JSON.parse(localStorage.getItem("authUser"))
+       if(adminAuth){
+         userName.innerHTML = auth.name 
+       }
+       else{
+           window.location.assign("SignupPhase.html")
+       }
+</script>
+<script>
+  includeHTML()
+</script>
+</body>
+</html>

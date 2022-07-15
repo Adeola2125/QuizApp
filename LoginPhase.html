@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./LoginPhase.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="container bg-primaryy">
+        <div class="row">
+            <div class="col-md-6 bg-light d">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand pb-5" href="#">MY QUIZ</a>
+                </nav>
+                <!-- <h2 class="mockupworld text-white">ALAT by Wema</h2> -->
+                <em><h5 class="mockupworld" id="username"></h5></em>
+                <em class="bestfree pt-5">Your best free TECH QUIZ App.</em>
+                <h3 class="create pb-4 pl-4 pt-3 text-center">Login</h3>
+            <form class="text-left m-auto"  style="width: 60%;font-size: 13px;">
+                <div class="form-group mb-1">
+                  <label for="form-group-input2">Email Address/Phone Number</label>
+                  <input type="email" class="form-control" id="form-group-input2" placeholder="User@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label for="form-group-input3">Password</label>
+                    <input type="password" class="form-control" id="form-group-input3" placeholder="Password">
+                  </div>
+                  <button onclick="Login()" class="btn btn-primary" type="button"><small>Login</small></button>
+              </form><br>
+              <p class="pt-3 pl-5 pb-3"><small>You don't have an account? <a class="c-primary" href="./SignupPhase.html" style="text-decoration: none;">SignUp</a></small></p>
+
+                <!-- <img style="width: 70%;box-shadow: 5px 5px 5px 5px rgb(0, 81, 255);border-radius: 20px;padding-top: 40px;height: 70%;" src="./Quiz image.jpg" alt=""> -->
+            </div>
+            <div class="container1 d-none d-md-block text-sm-center text-center col-md-6">
+                <img class="pt-5" src="./TechQuiz GIF.gif" alt="" style="width: 70%;">
+                
+        
+               
+            
+        </div>
+       
+        </div>
+        
+    </div>
+
+     <!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    let email = document.getElementById("form-group-input2");
+    let password = document.getElementById("form-group-input3");
+
+    function Login(){
+        let loginData = {
+            email: email.value,
+            password: email.value,
+            password: password.value
+        }
+        var users = JSON.parse(localStorage.getItem("users"))
+        let authUser = {}
+        let loginStatus=false;
+        users.some(el =>{
+            if(( el.email == loginData.email || el.phoneNo == loginData.email) && (el.password == loginData.password)) {
+                loginStatus=true;
+                authUser = el
+            }
+        });
+        if(loginStatus) {
+            swal({
+                title: "Successful Login",
+                icon: "success",
+                buttons: true
+            });
+           for(let i = 0; i < users.length; i++){
+                if(users[i].userType == "user"){
+                    window.location.assign("LandPage.html")
+                }
+                else{
+                    window.location.assign("dashboard2.html")
+                    localStorage.setItem('authUser', JSON.stringify(authUser))
+                }
+           }
+                
+            
+                
+            
+            
+        } 
+        else {
+            return swal({
+                title: "Invalid Credentials",
+                icon: "warning"
+            })
+            window.location.assign("SignupPhase.html")
+       
+        }
+    }
+
+    //     var username = document.getElementById("username")
+    //     let auth = JSON.parse(localStorage.getItem("authUser"))
+    //    if(auth){
+    //      username.innerHTML =`<em>Welcome</em> ${auth.name}` 
+    //    }
+    //    else{
+    //        window.location.assign("signuppage.html")
+    //    }
+</script>
+</body>
+</html>

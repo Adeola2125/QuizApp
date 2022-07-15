@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./LandPage.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light my-0">
+            <a class="navbar-brand ml-4" href="#">MY QUIZ</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mr-5 text-primary">
+                <li class="nav-item">
+                  <a class="btn btn-light nav-link" href="./LoginPhase.html">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-light nav-link" href="SignupPhase.html">Register</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Activate Quiz</a>
+                </li> -->
+                <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Categories
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li> -->
+                <!-- <li class="nav-item">
+                  <a class="nav-link disabled">Disabled</a>
+                </li> -->
+              <!-- </ul> -->
+              <!-- <form class="form-inline my-2 my-lg-0 ml-auto">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form> -->
+            <!-- </div> -->
+          </nav>
+          <div class="container col-sm-12">
+              <h3 class="text-center text-white simplequiz">SIMPLE QUIZ GAME</h3>
+          </div>
+          <hr>
+          <div class="text-primary text text-center">
+            <h5>Test Your <em class="text-white">TECH SKILLS</em></h5>
+          </div>
+
+          <div class="input-group clientCategorySelect m-auto col-4">
+            <select class="custom-select" id="clientSelectFilter" onchange="Refetch()" aria-label="Example select with button addon">
+              <!-- <option selected>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option> -->
+            </select>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary text-white" type="button" onclick="searchButton()">Search</button>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-white text-center totalCategory" id="clientTotalCat"><span id="total"></span></p>
+            <div id="cardCat">
+              
+            </div>
+          </div>
+
+          <div class="container text-center buttons">
+              <!-- <button class="btn btn-lg mr-5 button text-white" onclick="startQuiz()">Start Quiz!</button>
+              <button class="btn btn-lg button text-white">End Quiz!</button> <br> <br> -->
+              <h5 class="goodluck text-white mt-4">GOOD LUCK!!!</h5>
+          </div>
+    </div>
+
+   
+
+     <!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+<script>
+   let clientSelectFilter = document.getElementById("clientSelectFilter")
+   let clientTotalCat = document.getElementById("clientTotalCat")
+   let total = Number(document.getElementById("total"))
+   let cardCat = document.getElementById("cardCat")
+    
+    var myData = JSON.parse(localStorage.getItem("myData")) || null;
+
+      if(myData !=null) {
+        clientSelectFilter.innerHTML = ""
+        clientSelectFilter.innerHTML = "<option value=''>Select Option..</option>"
+        // myQuiz = myQuiz.filter(el => el.status == "LIVE")
+        for (let i = 0; i < myData.length; i++) {
+          clientSelectFilter.innerHTML +=`<option value="${myData[i].name}">${myData[i].name}</option>`
+        }
+      }
+
+  function Refetch(){
+    var myQuiz = JSON.parse(localStorage.getItem("myQuiz")) || null;
+    if (myQuiz != null){
+      clientTotalCat.innerHTML = ""
+      let calculateCat = 0;
+      if(clientSelectFilter.value){
+        // console.log(clientSelectFilter.value);
+        let calculate = myQuiz.filter(el => el.dropdwn == clientSelectFilter.value)
+        // console.log(calculate);
+        for(let i = 0; i < calculate.length; i++){
+         
+        }
+        total = calculate.length
+      }
+      
+    }
+  }
+  Refetch()
+
+  let quizez = []
+
+  function searchButton(i){
+    quizez=[];
+    var myQuiz = JSON.parse(localStorage.getItem("myQuiz")) || null;
+    if (myQuiz != null){
+      // let quize = JSON.parse(localStorage.getItem("quizez"))
+      cardCat.innerHTML = ""
+      if(clientSelectFilter.value){
+        myQuiz = myQuiz.filter(el => el.dropdwn.toLowerCase() == clientSelectFilter.value.toLowerCase())
+        // console.log(clientSelectFilter.value);
+        if (myQuiz == ""){
+          return cardCat.innerHTML = `<h3 id="Norecords">No records found for selected quiz! please select any other.</h3>`
+        }
+        for (let i = 0; i < myQuiz.length; i++) {
+          let relatedQuiz = []
+          myQuiz.forEach((element, ind) =>{
+            if(myQuiz[i].parentId == element.parentId){
+              relatedQuiz.push(element)
+            }
+          })
+          console.log(relatedQuiz);
+          let filteredRelatedQuiz = relatedQuiz.filter(el => {
+            let status = true
+            quizez.forEach((ele, ind) => {
+              for (let indx = 0; indx < quizez[ind].length; indx++) {
+                // console.log(quizez[ind][indx].id);
+                if(quizez[ind][indx].id == el.id){
+                  status = false
+                }
+              }
+            })
+            return status
+          })  
+
+          if(filteredRelatedQuiz.length) quizez.push(filteredRelatedQuiz)
+          // console.log(filteredRelatedQuiz);
+          // console.log(quizez);        
+        }
+      }
+      for(let i = 0; i < quizez.length; i++){
+              clientTotalCat.innerHTML +=`${quizez[i].dropdwn} have ${quizez.length} categories`
+              cardCat.innerHTML +=`
+                <div class="col-sm-8" style="position: relative; top: 15rem; margin: auto; margin-bottom: 10px; background-color: rgb(0, 81, 255); padding-top: 1rem; padding-bottom: 1rem;">
+                  <div class="card">
+                    <div class="card-body row">
+                      <div class="col-md-9">
+                        <p class="card-text">Category</p>
+                        <em style="margin-top: 1rem; margin-bottom:2rem; font-size: 60px;" class="card-title">${clientSelectFilter.value}</em><br>
+                        <a href="#" class="btn btn-light text-primary mt-5" style="border: 1px solid #001a2f;" type="button" onclick="takeQuiz(${i})">Take Quiz</a>
+                      </div>
+                      <div class="col-md-3">
+                        <p class="card-text">Questions</p>
+                        <h3 class="card-title" style="margin-top: 1rem; margin-bottom:2rem; font-size: 60px;">${quizez[i].length}</h3>
+                      </div> 
+                    </div>
+                  </div>
+              `
+            }
+            
+    }
+    Refetch()
+  }
+
+  function takeQuiz(ind){
+    console.log(quizez[0],ind)
+    var users = JSON.parse(localStorage.getItem("users"))
+    loginStatus = false
+      users.some(el =>{
+              if( el.email || el.phoneNo || el.password) {
+                  loginStatus = true;
+                  authUser = el
+              }
+          });
+        if(loginStatus) {
+          let quizData = []
+          quizez.forEach((item, i) => {
+            if(i== ind) {
+              quizData=item
+            }
+          })
+          localStorage.setItem('quizez', JSON.stringify(quizData))
+         
+          setTimeout(() => {
+            window.location.assign("./quizPage.html")
+
+          }, 1000);
+          
+        
+        } 
+        
+    
+          
+    // swal({
+    //   icon: "success",
+    //   title: "Welcome Back",
+    //   buttons: true
+    // });
+   
+    
+   
+  }
+</script>
+</body>
+</html>

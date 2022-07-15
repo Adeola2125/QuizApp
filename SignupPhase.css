@@ -1,0 +1,33 @@
+.container{
+    margin:vh;
+    /* height: 85vh; */
+    box-shadow: 5px 5px 5px 5px #001a2f;
+    
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url(./images.jpg);
+}
+.navbar-brand{
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+.mockupworld{
+    opacity: 0.5;
+}
+.bestfree{
+    font-size: 25px;
+}
+.container1{
+    /* height: 85vh; */
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+}
+.create{
+    color: rgb(0, 81, 255);
+    padding-top: 40px;
+    margin-left: 50px;
+}
