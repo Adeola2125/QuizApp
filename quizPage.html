@@ -58,7 +58,7 @@
                                 <p id="scoreText"></p>
                             </div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-primary btn-block" id="saveQuiz">Save Quiz to History</button>
+                            <button type="button" class="btn btn-primary btn-block" id="saveQuiz" onclick="saveQuizToHistory()">Save Quiz to History</button>
                             <a href="quizPage.html" type="button" class="btn btn-primary btn-block" id="startOver">Start Over</a>
                             <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Cancel</button>
                         </div>
@@ -89,6 +89,8 @@
     let scoreText = document.getElementById("scoreText")
     let saveQuiz = document.getElementById("saveQuiz")
     let startOver = document.getElementById("startOver")
+    let score = 0;
+
     function Refetch(){
         var quizez = JSON.parse(localStorage.getItem("quizez"))
         
@@ -172,7 +174,7 @@
             })
             .then((willEnd) => {
             if (willEnd) {
-                let score = 0
+                
                 quizez.forEach((element, i) => {
                     let obj = {
                         q : document.getElementById(`ques${i}`).innerHTML,
@@ -217,15 +219,25 @@
                 $('#staticBackdrop').modal('show');
                 // staticBackdrop.style.display = "block";
 
-                // setTimeout(() => {
-                //     window.location.assign("quizPage.html")
-                // }, 1000)
+                
             } else {
                 swal("Your imaginary file is safe!");
             }
             });
            
     }
+    
+    function saveQuizToHistory(){
+        let history = {
+            save_Quizez: quizez,
+            clientScore: score
+        }
+        localStorage.setItem("quiz_History", JSON.stringify(history))
+        setTimeout(() => {
+            location.assign("LandPage.html")
+        }, 2000)
+    }
+
     let name = document.getElementById("name");
     let auth = JSON.parse(localStorage.getItem("authUser"))
     if(auth){
