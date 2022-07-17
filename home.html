@@ -61,7 +61,27 @@
 <script>
     let email = document.getElementById("form-group-input2");
     let password = document.getElementById("form-group-input3");
-
+    if(localStorage.getItem('users') == null) {
+      localStorage.setItem('users', JSON.stringify([{
+        name: "Admin",
+        email: "admin@admin.com",
+        phoneNo: 08121253150,
+        password: 123456789,
+        userType: 'admin'
+      }]))
+    } else {
+      let records = JSON.parse(localStorage.getItem('users'));
+      if(records.some(el => el.email == 'admin@admin.com' || el.name.toLowerCase() == 'admin') == false) {
+        records.push({
+          name: "Admin",
+          email: "admin@admin.com",
+          phoneNo: 08121253150,
+          password: 123456789,
+          userType: 'admin'
+        })
+      }
+      localStorage.setItem('users', JSON.stringify(records))
+    }
     function Login(){
         let loginData = {
             email: email.value,
