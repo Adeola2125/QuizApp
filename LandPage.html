@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto mr-5 text-primary">
                 <li class="nav-item">
-                  <a class="btn btn-light nav-link" href="./LoginPhase.html">Logout <i class="fa fa-power-off" aria-hidden="true"></i></a>
+                  <a class="btn btn-light nav-link" href="./home.html">Logout <i class="fa fa-power-off" aria-hidden="true"></i></a>
                 </li>
                 <!-- <li class="nav-item">
                   <a class="btn btn-light nav-link" href="SignupPhase.html">Register</a>
@@ -59,7 +59,7 @@
             <h5>Test Your <em class="text-white">TECH SKILLS</em></h5>
           </div>
 
-          <div class="input-group clientCategorySelect m-auto col-4">
+          <div class="input-group clientCategorySelect m-auto col-md-4">
             <select class="custom-select" id="clientSelectFilter" onchange="Refetch()" aria-label="Example select with button addon">
               <!-- <option selected>Choose...</option>
               <option value="1">One</option>
@@ -194,6 +194,9 @@
             
     }
     Refetch()
+  } else {
+    return cardCat.innerHTML = `<h3 id="Norecords">Could not find any quiz.</h3>`
+
   }
 
   function takeQuiz(ind){

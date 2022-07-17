@@ -306,7 +306,677 @@
   let xy = ""
   let selectDropdownMenu = document.getElementById("selectDropdownMenu")
   dropdownContainer.style.display = "none"
+  let seedQuizData=[
+    {
+        "question": "iyfvhkvgvvk",
+        "id": 802961,
+        "parentId": 437033441877,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "rfghjl",
+                "correctAnswer": false
+            },
+            {
+                "name": "fghjl;/",
+                "correctAnswer": true
+            },
+            {
+                "name": "yhujkl;.",
+                "correctAnswer": false
+            },
+            {
+                "name": "uioiuh",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "ygujlkjgfcv",
+        "id": 650641,
+        "parentId": 437033441877,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "kijvbnmkn",
+                "correctAnswer": false
+            },
+            {
+                "name": "fghbkjvm",
+                "correctAnswer": false
+            },
+            {
+                "name": ":Lm;lbk",
+                "correctAnswer": true
+            },
+            {
+                "name": "iyufhcvhj",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "jghdxhjmngn ",
+        "id": 627907,
+        "parentId": 437033441877,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": ",hggcbn cm",
+                "correctAnswer": true
+            },
+            {
+                "name": "gcgmfm",
+                "correctAnswer": false
+            },
+            {
+                "name": "k,m ",
+                "correctAnswer": false
+            },
+            {
+                "name": "bjhn",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "CGH,JVKVJ..",
+        "id": 654916,
+        "parentId": 206095776840,
+        "dropdwn": "HTML",
+        "opt": [
+            {
+                "name": "l.klhi",
+                "correctAnswer": false
+            },
+            {
+                "name": "ghjk,",
+                "correctAnswer": true
+            },
+            {
+                "name": "jjjjjbk ",
+                "correctAnswer": false
+            },
+            {
+                "name": "ouholh'o",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "iuglgiv",
+        "id": 107245,
+        "parentId": 206095776840,
+        "dropdwn": "HTML",
+        "opt": [
+            {
+                "name": "jjjj",
+                "correctAnswer": false
+            },
+            {
+                "name": "jvbjkj",
+                "correctAnswer": false
+            },
+            {
+                "name": "vghg",
+                "correctAnswer": false
+            },
+            {
+                "name": "bhh",
+                "correctAnswer": true
+            }
+        ]
+    },
+    {
+        "question": "CGH,JVKVJ..12",
+        "id": 573576,
+        "parentId": 538454712375,
+        "dropdwn": "CSS",
+        "opt": [
+            {
+                "name": "l.klhikljlkh",
+                "correctAnswer": true
+            },
+            {
+                "name": "ghjk,nmkkb.k",
+                "correctAnswer": false
+            },
+            {
+                "name": "jjjjjbk lkllk",
+                "correctAnswer": false
+            },
+            {
+                "name": "ouholh'ovbvvv",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "iuglgiv12",
+        "id": 41533,
+        "parentId": 538454712375,
+        "dropdwn": "CSS",
+        "opt": [
+            {
+                "name": "jjjjb/bk",
+                "correctAnswer": false
+            },
+            {
+                "name": "jvbjkjn b.k ",
+                "correctAnswer": false
+            },
+            {
+                "name": "vghg.. bjbh",
+                "correctAnswer": true
+            },
+            {
+                "name": "bhhijool",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "What was Meta Platforms Inc formerly known as?",
+        "id": 901593,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Snapchat",
+                "correctAnswer": false
+            },
+            {
+                "name": "Facebook",
+                "correctAnswer": true
+            },
+            {
+                "name": "Airtel",
+                "correctAnswer": false
+            },
+            {
+                "name": "Stackflow",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "Which English city is known as the Steel City?",
+        "id": 45234,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Sheffield",
+                "correctAnswer": true
+            },
+            {
+                "name": "Shiffield",
+                "correctAnswer": false
+            },
+            {
+                "name": "Sheeffield",
+                "correctAnswer": false
+            },
+            {
+                "name": "Sheffiid",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "Which former British colony was given back to China in 1997?",
+        "id": 376590,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "King Kong",
+                "correctAnswer": false
+            },
+            {
+                "name": "Kong Fu",
+                "correctAnswer": false
+            },
+            {
+                "name": "Hong Hong",
+                "correctAnswer": false
+            },
+            {
+                "name": "Hong Kong",
+                "correctAnswer": true
+            }
+        ]
+    },
+    {
+        "question": "The logo for luxury car maker Porsche features which animal?",
+        "id": 667217,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Bicycle",
+                "correctAnswer": false
+            },
+            {
+                "name": "Horse",
+                "correctAnswer": true
+            },
+            {
+                "name": "Motorcyce",
+                "correctAnswer": false
+            },
+            {
+                "name": "Hose",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "Which element is said to keep bones strong?",
+        "id": 569262,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Calcium",
+                "correctAnswer": true
+            },
+            {
+                "name": "Protein",
+                "correctAnswer": false
+            },
+            {
+                "name": "Carbohydrate",
+                "correctAnswer": false
+            },
+            {
+                "name": "Calcum",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "Suriname is located on which continent?",
+        "id": 575961,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "South Korea",
+                "correctAnswer": false
+            },
+            {
+                "name": "South Africa",
+                "correctAnswer": false
+            },
+            {
+                "name": "South America",
+                "correctAnswer": true
+            },
+            {
+                "name": "South South",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "In tennis, what piece of fruit is found at the top of the men’s Wimbledon trophy?",
+        "id": 117637,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Apple",
+                "correctAnswer": false
+            },
+            {
+                "name": "Orange",
+                "correctAnswer": false
+            },
+            {
+                "name": "Pineapple",
+                "correctAnswer": true
+            },
+            {
+                "name": "Peanut",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "Haematology is the study of what?",
+        "id": 918375,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "The blood",
+                "correctAnswer": true
+            },
+            {
+                "name": "Human Being",
+                "correctAnswer": false
+            },
+            {
+                "name": "The School",
+                "correctAnswer": false
+            },
+            {
+                "name": "The flood",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "Which body sets the interest rates in the UK?",
+        "id": 623551,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Bank of England",
+                "correctAnswer": true
+            },
+            {
+                "name": "Bank of Cameroon",
+                "correctAnswer": false
+            },
+            {
+                "name": "Bank of Nigeria",
+                "correctAnswer": false
+            },
+            {
+                "name": "Bank of Africa",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "How many lives is a cat said to have?",
+        "id": 997697,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Two",
+                "correctAnswer": false
+            },
+            {
+                "name": "Ten",
+                "correctAnswer": false
+            },
+            {
+                "name": "Seven",
+                "correctAnswer": false
+            },
+            {
+                "name": "Nine",
+                "correctAnswer": true
+            }
+        ]
+    },
+    {
+        "question": "Randall Flag, Jack Torrance and John Coffey are all characters created by which author?",
+        "id": 429296,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Larry Fary",
+                "correctAnswer": false
+            },
+            {
+                "name": "Stephen Harlow",
+                "correctAnswer": false
+            },
+            {
+                "name": "Stephen King",
+                "correctAnswer": true
+            },
+            {
+                "name": "John Doe",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "In 2018, Scott Morrison was elected as the Prime Minister of which country?",
+        "id": 752633,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Australia",
+                "correctAnswer": true
+            },
+            {
+                "name": "Ghana",
+                "correctAnswer": false
+            },
+            {
+                "name": "Nigeria",
+                "correctAnswer": false
+            },
+            {
+                "name": "America",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "What is a female elephant called?",
+        "id": 770771,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Elephant",
+                "correctAnswer": true
+            },
+            {
+                "name": "Cow",
+                "correctAnswer": false
+            },
+            {
+                "name": "Fish",
+                "correctAnswer": false
+            },
+            {
+                "name": "Goat",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "Franz Josef Strauss Airport is located in which country?",
+        "id": 419157,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Germany",
+                "correctAnswer": true
+            },
+            {
+                "name": "German",
+                "correctAnswer": false
+            },
+            {
+                "name": "Africa",
+                "correctAnswer": false
+            },
+            {
+                "name": "Epic",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "On what date is Bastille Day celebrated in France?",
+        "id": 368684,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "4th July",
+                "correctAnswer": false
+            },
+            {
+                "name": "14 June",
+                "correctAnswer": false
+            },
+            {
+                "name": "4th June",
+                "correctAnswer": false
+            },
+            {
+                "name": "14th July",
+                "correctAnswer": true
+            }
+        ]
+    },
+    {
+        "question": "Rojo is the Spanish word for which colour?",
+        "id": 894315,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Yellow",
+                "correctAnswer": false
+            },
+            {
+                "name": "White",
+                "correctAnswer": false
+            },
+            {
+                "name": "Grey",
+                "correctAnswer": false
+            },
+            {
+                "name": "Red",
+                "correctAnswer": true
+            }
+        ]
+    },
+    {
+        "question": "Jacinda Ardern became the Prime Minister of which country in 2017?",
+        "id": 737735,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "New Zeland",
+                "correctAnswer": false
+            },
+            {
+                "name": "New Zaland",
+                "correctAnswer": false
+            },
+            {
+                "name": "New Zealand",
+                "correctAnswer": true
+            },
+            {
+                "name": "New Zealeand",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "What is the capital of Argentina?",
+        "id": 114020,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Buens Aires",
+                "correctAnswer": false
+            },
+            {
+                "name": "Benue Aires",
+                "correctAnswer": false
+            },
+            {
+                "name": "Buenos Aires",
+                "correctAnswer": true
+            },
+            {
+                "name": "Buenos Airs",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "Which US agency has the motto “For the benefit of all”?",
+        "id": 498253,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "NASA",
+                "correctAnswer": true
+            },
+            {
+                "name": "CASA",
+                "correctAnswer": false
+            },
+            {
+                "name": "OSOSA",
+                "correctAnswer": false
+            },
+            {
+                "name": "NATT",
+                "correctAnswer": false
+            }
+        ]
+    },
+    {
+        "question": "Pyrophobia is the fear of what?",
+        "id": 840237,
+        "parentId": 940909744363,
+        "dropdwn": "General Knowledge",
+        "opt": [
+            {
+                "name": "Water",
+                "correctAnswer": false
+            },
+            {
+                "name": "Fire",
+                "correctAnswer": true
+            },
+            {
+                "name": "Book",
+                "correctAnswer": false
+            },
+            {
+                "name": "Crowd",
+                "correctAnswer": false
+            }
+        ]
+    }
+]
+seedQuizDataFunction()
+function seedQuizDataFunction(){
+    let duplicateEntry=false;
+    if(localStorage.getItem('myQuiz') == null) {
+      localStorage.setItem('myQuiz', JSON.stringify(seedQuizData))
+    } else {
+      let records = JSON.parse(localStorage.getItem('myQuiz'));
+      
+      records.forEach(item => {
+        seedQuizData.forEach(item2 => {
+            if(item2.question == item.question){
+                return duplicateEntry=true 
+            }
+        })
+      })
+      if(!duplicateEntry) {
 
+          localStorage.setItem('myQuiz', JSON.stringify(records))
+      }
+    }
+}
   // while (options < 4){
   //   options++
   //   ${i}.innerHTML += `<option value="${options}"> ${options} </option>`

@@ -235,6 +235,65 @@
     let categoryStatus = document.getElementById("categoryStatus");
     let categoryModalStatus = document.getElementById("categoryModalStatus");
     let tbody = document.getElementById("tbody");
+    let seedCategoryData=[
+    {
+        "id": 164142,
+        "name": "General Knowledge",
+        "status": "LIVE",
+        "userType": "Admin"
+    },
+    {
+        "id": 442014,
+        "name": "HTML",
+        "status": "LIVE",
+        "userType": "Admin"
+    },
+    {
+        "id": 811130,
+        "name": "CSS",
+        "status": "LIVE",
+        "userType": "Admin"
+    },
+    {
+        "id": 691764,
+        "name": "JAVASCRIPT",
+        "status": "LIVE",
+        "userType": "Admin"
+    },
+    {
+        "id": 996595,
+        "name": "PHP",
+        "status": "LIVE",
+        "userType": "Admin"
+    },
+    {
+        "id": 543606,
+        "name": "NODE.JS",
+        "status": "LIVE",
+        "userType": "Admin"
+    }
+]
+seedCategory()
+function seedCategory(){
+    let duplicateEntry=false;
+    if(localStorage.getItem('myData') == null) {
+      localStorage.setItem('myData', JSON.stringify(seedCategoryData))
+    } else {
+      let records = JSON.parse(localStorage.getItem('myData'));
+      
+      records.forEach(item => {
+        seedCategoryData.forEach(item2 => {
+            if(item2.name == item.name){
+                return duplicateEntry=true 
+            }
+        })
+      })
+      if(!duplicateEntry) {
+
+          localStorage.setItem('myData', JSON.stringify(records))
+      }
+    }
+}
     
     let xy = "";
 
