@@ -52,5 +52,11 @@ label.radio input:checked + span {
   display: none ;
 }
 #staticBackdrop{
-  display: none ;
+  background-color: #191c24 !important;
+}
+#startOver{
+  display: none;
+}
+#saveQuiz{
+  display: none;
 }
