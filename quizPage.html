@@ -228,11 +228,14 @@
     }
     
     function saveQuizToHistory(){
+        let client_Quiz_history = []
         let history = {
-            save_Quizez: quizez,
-            clientScore: score
+            Quiz_history: quizez,
+            clientScore: score,
+            userId: Math.floor(Math.random() * 100000)
         }
-        localStorage.setItem("quiz_History", JSON.stringify(history))
+        client_Quiz_history.push(history)
+        localStorage.setItem("quiz_History", JSON.stringify(client_Quiz_history))
         setTimeout(() => {
             location.assign("LandPage.html")
         }, 2000)
