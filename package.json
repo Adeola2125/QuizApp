@@ -2,7 +2,7 @@
   "name": "quiz-app",
   "description": "A basic quiz application built with javascript language and local storage as database",
   "version": "1.0.0",
-  "main": "LoginPhase.js",
+  "main": "Index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
