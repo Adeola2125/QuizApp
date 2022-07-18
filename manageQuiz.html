@@ -185,66 +185,68 @@
                       </div>
                   </div> 
                   </div>
-                  <table class="col-sm-12" border="1" cellspacing="0" style="border-color: white;overflow-x: auto;" id ="">
-                      <thead>
-                          <tr >
-                              <th>S/N</th>
-                              <th>Name</th>
-                              <th>Questions</th>
-                              <th>Answers</th>
-                              <th>Correct Answers</th>
-                              <th>Action</th>
-                              <!-- <th>Delete</th>
-                              <th>Edit</th> -->
-                          </tr>
-                      </thead>
-                      <tbody id="toutput">
-                           <!-- The Modal -->
-                  <div class="modal modal" id="myEditModal">
-                      <div class="modal-dialog">
-                      <div class="modal-content">
-                      
-                          <!-- Modal Header -->
-                          <div class="modal-header">
-                          <h4 class="modal-title text-dark">EDIT <i class="fab fa-quora" aria-hidden="true"></i>UIZ<i class="fa fa-tasks ml-2" aria-hidden="true"></i></h4>
-                          <button type="button" class="close" data-dismiss="modal">×</button>
-                          </div>
+                 <div style="overflow-x: auto;">
+                  <table class="col-sm-12" border="1" cellspacing="0" style="border-color: white;" id ="">
+                    <thead>
+                        <tr >
+                            <th>S/N</th>
+                            <th>Name</th>
+                            <th>Questions</th>
+                            <th>Answers</th>
+                            <th>Correct Answers</th>
+                            <th>Action</th>
+                            <!-- <th>Delete</th>
+                            <th>Edit</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="toutput">
+                         <!-- The Modal -->
+                      <div class="modal modal" id="myEditModal">
+                          <div class="modal-dialog">
+                          <div class="modal-content">
                           
-                          <!-- Modal body -->
-                          <div class="modal-body" style=" background-color: #191c24;">
-                            <div class="card mb-3" style="border: 2px solid white;background-color: #001a2f;">
-                              <div class="card-body">
-                                <h5 class="card-title text-center" style="font-size: 27px;">Question</h5>
-                                <label>Set Question</label>
-                                <textarea type="text" class="form-control" style="border: 1px solid white;" id="setModalQuestion" cols="30" rows=""></textarea>
-                                <label>Select Options</label>
-                                <select name="" class="custom-select form-control" id="editOptionSelect" style="border: 1px solid white;">
-                                    <option value=""></option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                                <form class="form-row mt-3" id="setEditModalAnswers">
-                                  
-                                  
-                                </form>
-                                  <h6 class="pt-0">Correct Answer</h6>
-                                <fieldset class="form-row mt-2" id="correctEditModalAnswer">
-                                </fieldset>
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                              <h4 class="modal-title text-dark">EDIT <i class="fab fa-quora" aria-hidden="true"></i>UIZ<i class="fa fa-tasks ml-2" aria-hidden="true"></i></h4>
+                              <button type="button" class="close" data-dismiss="modal">×</button>
                               </div>
-                            </div>
+                              
+                              <!-- Modal body -->
+                              <div class="modal-body" style=" background-color: #191c24;">
+                                <div class="card mb-3" style="border: 2px solid white;background-color: #001a2f;">
+                                  <div class="card-body">
+                                    <h5 class="card-title text-center" style="font-size: 27px;">Question</h5>
+                                    <label>Set Question</label>
+                                    <textarea type="text" class="form-control" style="border: 1px solid white;" id="setModalQuestion" cols="30" rows=""></textarea>
+                                    <label>Select Options</label>
+                                    <select name="" class="custom-select form-control" id="editOptionSelect" style="border: 1px solid white;">
+                                        <option value=""></option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                    <form class="form-row mt-3" id="setEditModalAnswers">
+                                      
+                                      
+                                    </form>
+                                      <h6 class="pt-0">Correct Answer</h6>
+                                    <fieldset class="form-row mt-2" id="correctEditModalAnswer">
+                                    </fieldset>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                              <button type="button" class="btn btn-primary"data-dismiss="modal" id="updateButton" onclick="updateButton()">Update</button>
+                              </div>
+                              
                           </div>
-                          
-                          <!-- Modal footer -->
-                          <div class="modal-footer">
-                          <button type="button" class="btn btn-primary"data-dismiss="modal" id="updateButton" onclick="updateButton()">Update</button>
                           </div>
-                          
-                      </div>
-                      </div>
-                  </div> 
-                      </tbody>
-                  </table>
+                      </div> 
+                    </tbody>
+                </table>
+                 </div>
                 </div>
               </div>
           </div>
@@ -1022,7 +1024,6 @@ function seedQuizDataFunction(){
            let optionName = myQuiz[i].opt.map((el) => {
              return el.name +' '
            }).join(",");
-           console.log(optionName)
            let checkCorrectAnswer = myQuiz[i].opt.filter((el => {
              return el.correctAnswer === true
            })).map((el) => { 
