@@ -143,6 +143,9 @@
       if(clientSelectFilter.value){
         myQuiz = myQuiz.filter(el => el.dropdwn.toLowerCase() == clientSelectFilter.value.toLowerCase())
         // console.log(clientSelectFilter.value);
+        if(clientSelectFilter.value == ""){
+          return cardCat.innerHTML = `<h3>Could not find any quiz.</h3>`
+        }
         if (myQuiz == ""){
           return cardCat.innerHTML = `<h3 id="Norecords">No records found for selected quiz! please select any other.</h3>`
         }
@@ -194,10 +197,7 @@
             
     }
     Refetch()
-  } else {
-    return cardCat.innerHTML = `<h3 id="Norecords">Could not find any quiz.</h3>`
-
-  }
+  } 
 
   function takeQuiz(ind){
     console.log(quizez[0],ind)
@@ -212,8 +212,8 @@
         if(loginStatus) {
           let quizData = []
           quizez.forEach((item, i) => {
-            if(i== ind) {
-              quizData=item
+            if(i == ind) {
+              quizData = item
             }
           })
           localStorage.setItem('quizez', JSON.stringify(quizData))
@@ -225,17 +225,6 @@
           
         
         } 
-        
-    
-          
-    // swal({
-    //   icon: "success",
-    //   title: "Welcome Back",
-    //   buttons: true
-    // });
-   
-    
-   
   }
 </script>
 </body>
