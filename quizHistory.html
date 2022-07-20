@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY QUIZ</title>
-    <link rel="stylesheet" href="./dashboard2.css">
+    <link rel="stylesheet" href="./dashboard.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -40,15 +40,15 @@
               </div>
             </div>
             <div class="col-md-10 pt-5 text-white" style="background-color: #001a2f;">
-              <h5><i class="fa fa-home mr-2" aria-hidden="true"></i> DASHBOARD</h5>
+              <h5><i class="fa fa-certificate" aria-hidden="true"></i> QUIZ HISTORY</h5>
                 <div class="row mt-3">
                     <div class="col-md-8">
                       <h4 id="username"></h4>
                       <p>All systems are running smoothly!</p>
                     </div>
                   
-                  <div class="col-md-4">
-                      <p class="ml-auto" id="clock"></p>
+                    <div class="col-md-4">
+                      <p id="cloock"><i class="fa fa-home mr-1" aria-hidden="true"></i>Dashboard  <i class="fa fa-angle-right" style="font-size: small;" aria-hidden="true"></i>  Quiz History</p>
                   </div>
                 </div>
             </div>
@@ -57,8 +57,8 @@
             <div class="col-md-2 bg-light text-dark">
               <h6 style="background-color: #ffffff; font-size: small;" class="text-center text-muted mt-5"><span style="border-radius: 15%;">MODULE</span></h6>
             <ul class="navbar-nav pt-3 text-dark" style="font-size: 14px;">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./dashboard2.html"><i class="fa fa-home mr-2" aria-hidden="true"></i>DASHBOARD</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="./dashboard.html"><i class="fa fa-home mr-2" aria-hidden="true"></i>DASHBOARD</a>
                   </li>
                 <li class="nav-item">
                   <a class="nav-link" href="./categoryModule.html"><i class="fa fa-bars" aria-hidden="true"></i> MANAGE CATEGORY <span class="sr-only">(current)</span></a>
@@ -72,8 +72,8 @@
               </ul>
               <hr style="background-color: #001a2f;">
               <ul class="navbar-nav text-dark" style="font-size: 14px;">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fa fa-certificate" aria-hidden="true"></i> QUIZ HISTORY</a>
+                <li class="nav-item active">
+                  <a class="nav-link" href="./quizHistory.html"><i class="fa fa-certificate" aria-hidden="true"></i> QUIZ HISTORY</a>
                 </li>
               </ul>
           </div>
@@ -89,52 +89,15 @@
                         <p class="ml-auto" id="clock"></p>
                     </div>
                   </div> -->
-                  <div class="row mt-4 text-white">
-                    <div class="col-sm-3">
-                        <div class="card card1">
-                          <div class="card-body">
-                            <h5 class="card-title number" id="catCount">0</h5>
-                            <p class="card-text text-white">Total Categories.</p>
-                            <!-- <a href="#" class="btn btn-white">Go somewhere</a> -->
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="card card1">
-                          <div class="card-body">
-                            <h5 class="card-title number" id="quizCount">0</h5>
-                            <p class="card-text text-white">Total Quiz.</p>
-                            <!-- <a href="#" class="btn btn-white">Go somewhere</a> -->
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                          <div class="card card1">
-                            <div class="card-body">
-                              <h5 class="card-title number" id="notLive">0</h5>
-                              <p class="card-text text-white">Total Not~Live.</p>
-                              <!-- <a href="#" class="btn btn-white">Go somewhere</a> -->
-                            </div>
-                          </div>
-                        </div>
-                      <div class="col-sm-3">
-                        <div class="card card1">
-                          <div class="card-body">
-                            <h5 class="card-title number" id="">0</h5>
-                            <p class="card-text text-white">Total Not~Live.</p>
-                            <!-- <a href="#" class="btn btn-white">Go somewhere</a> -->
-                          </div>
-                        </div>
-                      </div>
-                  </div>
+                  
                   <div class="mt-5">
                     <table border="1" cellspacing="0">
                       <thead>
                         <tr>
-                          <td>S/N</td>
-                          <td>Name</td>
-                          <td>Quiz</td>
-                          <td>Score</td>
+                          <th>S/N</th>
+                          <th>Name</th>
+                          <th class="text-center">Quiz Information</th>
+                          <th id="totalScore">Total Score</th>
                         </tr>
                       </thead>
                       <tbody id="tbody2">
@@ -147,6 +110,8 @@
               </div>
           </div>
     </div>
+    <span class="badge badge-danger" id="badgeDanger" style="display: none;">Failed</span>
+    <span class="badge badge-primary" id="badgePrimary" style="display: none;">Passed</span>
      <!-- jQuery library -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
 
@@ -155,6 +120,86 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let tbody2 = document.getElementById("tbody2");
+  let users = JSON.parse(localStorage.getItem("users"))
+  var quiz_History = JSON.parse(localStorage.getItem("quiz_History"))
+  // for (let i = 0; i < quiz_History.length; i++) {
+  //   users.forEach(el =>{
+  //     if(quiz_History[i].authId == el.id){
+  //        getAuthName[i] = el.name
+  //     }
+  //     getAuthNameById.push(getAuthName)
+  //   })
+  // }
+  
+
+    function RefetchData(){
+        var quiz_History = JSON.parse(localStorage.getItem("quiz_History")) || null
+        let users = JSON.parse(localStorage.getItem("users"))
+        let badgeOutput = ""
+        let getAuthNameById = []
+        if(quiz_History !== null){
+          for(let i = 0; i < quiz_History.length; i++){
+            users.forEach((element, a) => {
+              if(quiz_History[i].authId == element.id){
+                getAuthNameById = element.name
+              }
+            });
+
+            let mapping = quiz_History[i].Quiz_history.map(el => {
+              return el.dropdwn
+            });
+            let questionLength = quiz_History[i].Quiz_history.map(el => {
+              return el.question
+            }); 
+
+            
+              if(quiz_History[i].clientScore <= Number(questionLength.length)){
+                 badgeOutput = `<span class="badge badge-success">Excellent</span>`
+              }
+              if(quiz_History[i].clientScore <= Number(questionLength.length / 2)){
+                 badgeOutput = `<span class="badge badge-primary">Passed</span>`
+              }
+              if(quiz_History[i].clientScore <= Number(questionLength.length / 3)){
+                badgeOutput = `<span class="badge badge-danger">Fair</span>`
+              }
+            
+
+            tbody2.innerHTML +=`
+              <tr>
+                <td style="padding-left: 2%;">${i + 1}</td>  
+                <td style="padding-left: 2%;">${getAuthNameById}</td>
+                <td>
+                  <table class="table-sm-responsive" style="width: 100%;margin-left: 2%;">
+                    <thead>
+                      <tr>
+                        <th style="width: 50%;">Quiz Category</th>
+                        <th style="width: 50%;">No of Questions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>${mapping[0]},</td>
+                        <td style="padding-left: 7%;">${Number(questionLength.length)}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>  
+                <td style="padding-left: 7%;">
+                  ${quiz_History[i].clientScore} ${badgeOutput}</td>  
+              </tr>
+            `
+            
+          }
+        }
+        localStorage.setItem("getAuthNameById", JSON.stringify(getAuthNameById))
+    }
+    RefetchData()
+    var quizez = JSON.parse(localStorage.getItem("quizez"))
+
+   
+</script>
 
 </body>
 </html>

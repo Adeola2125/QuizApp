@@ -84,7 +84,6 @@
     let staticBackdrop = document.getElementById("staticBackdrop");
     let scoreMe = document.getElementById("scoreMe");
     let quizlength = document.getElementById("quizlength");
-    let formal = document.getElementById("formal");
     let endQuizButton = document.getElementById("endQuizButton");
     let scoreText = document.getElementById("scoreText")
     let saveQuiz = document.getElementById("saveQuiz")
@@ -161,13 +160,17 @@
     };
 
     formal.addEventListener("submit", endQuiz)
-    console.log(formal);
     function endQuiz(e){
         e.preventDefault();
         let staticBackdrop = document.getElementById("staticBackdrop");
+        let clientName = ""
+        var auth = JSON.parse(localStorage.getItem("authUser"))
+            if(auth){
+                clientName = auth.name
+            }
         swal({
             title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
+            text: "Once you end, you will not be able to recover this imaginary file!",
             icon: "warning",
             buttons: true,
             dangerMode: true,
@@ -187,7 +190,6 @@
                         if(checkedAnswer.checked){
                             obj.ans = checkedAnswer.value 
                         }
-                    console.log(obj);
                     }
                     if (element.question == obj.q) {
                         let systemCorrectAns = element.opt.find(el => el.correctAnswer == true).name
@@ -197,17 +199,17 @@
                         scoreMe.innerHTML = score;
                         quizlength.innerHTML = quizez.length
                         if(score == 0){
-                            scoreText.innerHTML = `Oops, C'mon <em id="name"></em>, you can do more better you know. <p>Would you like to start over again?</p>`
+                            scoreText.innerHTML = `Oops, C'mon ${clientName}, you can do more better you know. <p>Would you like to start over again?</p>`
                             saveQuiz.style.display = "none"
                             startOver.style.display = "block"
                         }
                         else if(score < Number(quizez.length / 2)){
-                            scoreText.innerHTML = `Oops, you actually did well <em id="name"></em>, but you can do more better. <p>Would you like to save the just concluded quiz to your history?</p>`
+                            scoreText.innerHTML = `Oops, you actually did well ${clientName}, but you can do more better. <p>Would you like to save the just concluded quiz to your history?</p>`
                             saveQuiz.style.display = "block"
                             startOver.style.display = "none"
                         }
                         else{
-                            scoreText.innerHTML = `You have done absolutely well <em id="name"></em>,<p>Would you like to save the just concluded quiz to your history?</p>`
+                            scoreText.innerHTML = `You have done absolutely well ${clientName},<p>Would you like to save the just concluded quiz to your history?</p>`
                             saveQuiz.style.display = "block"
                             startOver.style.display = "none"
                         }
@@ -217,10 +219,8 @@
                 icon: "success",
                 });
                 $('#staticBackdrop').modal('show');
-                // staticBackdrop.style.display = "block";
-
-                
-            } else {
+            } 
+            else {
                 swal("Your imaginary file is safe!");
             }
             });
@@ -228,24 +228,31 @@
     }
     
     function saveQuizToHistory(){
+        var auth = JSON.parse(localStorage.getItem("authUser"))
+        let quiz_History = JSON.parse(localStorage.getItem("quiz_History"))
         let client_Quiz_history = []
         let history = {
             Quiz_history: quizez,
             clientScore: score,
-            userId: Math.floor(Math.random() * 100000)
+            userId: Math.floor(Math.random() * 100000),
+            authId: auth.id
         }
-        client_Quiz_history.push(history)
+        if(quiz_History == null){
+            client_Quiz_history.push(history)
+        }
+        else{
+            client_Quiz_history = quiz_History
+            client_Quiz_history.push(history)
+        }
+        
         localStorage.setItem("quiz_History", JSON.stringify(client_Quiz_history))
         setTimeout(() => {
             location.assign("LandPage.html")
         }, 2000)
     }
 
-    let name = document.getElementById("name");
-    let auth = JSON.parse(localStorage.getItem("authUser"))
-    if(auth){
-        name.innerHTML =`${auth.name}`
-    }
+    
+    
 
 </script>
 </body>

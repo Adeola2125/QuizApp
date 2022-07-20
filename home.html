@@ -12,33 +12,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <div class="container bg-primaryy">
+    <div class="containe.lr bg-primaryy col-12">
         <div class="row">
-            <div class="col-md-6 bg-light d">
+            <div class="col-md-7 bg-light d pb-5">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand pb-5" href="#">MY QUIZ</a>
+                    <a class="navbar-brand pb-5 mt-3" href="#">MY QUIZ</a>
                 </nav>
                 <!-- <h2 class="mockupworld text-white">ALAT by Wema</h2> -->
                 <em><h5 class="mockupworld" id="username"></h5></em>
-                <em class="bestfree pt-5">Your best free TECH QUIZ App.</em>
-                <h3 class="create pb-4 pl-4 pt-3 text-center">Login</h3>
+                <em class="bestfree pt-5 pb-3">Your best free TECH QUIZ App.</em>
+                <h3 class="create pb-4 pl-4 pt-3 text-center mt-3">Login</h3>
             <form class="text-left m-auto"  style="width: 60%;font-size: 13px;">
                 <div class="form-group mb-1">
                   <label for="form-group-input2">Email Address/Phone Number</label>
                   <input type="email" class="form-control" id="form-group-input2" placeholder="User@gmail.com">
                 </div>
-                <div class="form-group">
+                <div class="form-group mt-4">
                     <label for="form-group-input3">Password</label>
                     <input type="password" class="form-control" id="form-group-input3" placeholder="Password">
                   </div>
-                  <button onclick="Login()" class="btn btn-primary" type="button"><small>Login</small></button>
+                  <button onclick="Login()" class="btn btn-primary mt-3" type="button">Login</button>
               </form><br>
-              <p class="pt-3 pl-5 pb-3"><small>You don't have an account? <a class="c-primary" href="./SignupPhase.html" style="text-decoration: none;">SignUp</a></small></p>
+              <p class="pt-3 pl-5 pb-5"><small>You don't have an account? <a class="c-primary" href="./SignupPhase.html" style="text-decoration: none;">SignUp</a></small></p>
 
                 <!-- <img style="width: 70%;box-shadow: 5px 5px 5px 5px rgb(0, 81, 255);border-radius: 20px;padding-top: 40px;height: 70%;" src="./Quiz image.jpg" alt=""> -->
             </div>
-            <div class="container1 d-none d-md-block text-sm-center text-center col-md-6">
-                <img class="pt-5" src="./TechQuiz GIF.gif" alt="" style="width: 70%;">
+            <div class="container1 text-sm-center text-center col-md-5">
+                <!-- <img class="pt-5 mb-5" src="./best quiz questions.png" alt="" style="width: 100%; height: 95%;"> -->
                 
         
                
@@ -108,7 +108,7 @@
                     window.location.assign("LandPage.html")
                 }
                 else{
-                    window.location.assign("dashboard2.html")
+                    window.location.assign("dashboard.html")
                     localStorage.setItem('authUser', JSON.stringify(authUser))
                 }
            }

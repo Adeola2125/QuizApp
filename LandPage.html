@@ -54,7 +54,7 @@
           <div class="container col-sm-12">
               <h3 class="text-center text-white simplequiz">SIMPLE QUIZ GAME</h3>
           </div>
-          <hr>
+          <hr class="d-none d-md-block">
           <div class="text-primary text text-center">
             <h5>Test Your <em class="text-white">TECH SKILLS</em></h5>
           </div>
@@ -140,12 +140,13 @@
     if (myQuiz != null){
       // let quize = JSON.parse(localStorage.getItem("quizez"))
       cardCat.innerHTML = ""
-      if(clientSelectFilter.value){
+      if(clientSelectFilter.value == ''){
+          cardCat.innerHTML = `<h3 id="Norecords">No value found for the selected quiz.</h3>`
+        }
+      else{
         myQuiz = myQuiz.filter(el => el.dropdwn.toLowerCase() == clientSelectFilter.value.toLowerCase())
         // console.log(clientSelectFilter.value);
-        if(clientSelectFilter.value == ""){
-          return cardCat.innerHTML = `<h3>Could not find any quiz.</h3>`
-        }
+        
         if (myQuiz == ""){
           return cardCat.innerHTML = `<h3 id="Norecords">No records found for selected quiz! please select any other.</h3>`
         }
@@ -156,7 +157,6 @@
               relatedQuiz.push(element)
             }
           })
-          console.log(relatedQuiz);
           let filteredRelatedQuiz = relatedQuiz.filter(el => {
             let status = true
             quizez.forEach((ele, ind) => {
@@ -202,6 +202,7 @@
   function takeQuiz(ind){
     var users = JSON.parse(localStorage.getItem("users"))
     loginStatus = false
+
       users.some(el =>{
               if( el.email || el.phoneNo || el.password) {
                   loginStatus = true;

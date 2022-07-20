@@ -3,110 +3,54 @@
     padding: 0px;
 }
 body{
-    background-image: url(./Quiz\ logo6.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: rgb(0, 81, 255);
+    margin: 0px !important;
+    padding: 0px !important;
+    /* background-color: rgb(0, 81, 255) !important; */
+    background-color: #001a2f !important;
 }
 .navbar-brand{
     letter-spacing: 5px;
     font-weight: bold;
     color: rgb(0, 81, 255) !important;
 }
-.divs{
-    display: grid;
-    height: 100vh;
-    grid-template-columns: 0.8fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.3fr 1.2fr 0.8fr 0.6fr;
-    grid-template-areas: 
-    "nav nav nav nav nav"
-    "sidebar1 main main main main"
-    "sidebar1 content1 content2 content3 content4"
-    "sidebar1 footer footer footer  footer"
-    ;
-    grid-gap: 3px;
+.card1{
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background-color: #001a2f !important;
+    /* text-align: center; */
 }
-nav{
-    /* background-color: #d3d3d3; */
-    grid-area: nav;
-    z-index: 1;
-
+.card-title{
+    font-size: 4rem;
+    padding-left: 15px;
 }
-main {
-    /* background-color: #6495ed; */
-    grid-area: main;
-
+table{
+    width: 100%;
 }
-/* .sidebar1{
-    
-} */
-/* .sidebar1{
-    background-color: #0000ff;
-    grid-area: sidebar;
-    overflow-y: scroll;
-    grid-area: sidebar;
-    padding: 70px 0px 0px 8px;
-    box-sizing: border-box;
-    line-height: 30px;
-    overflow-y: scroll;
-    position: fixed;
-    height: 50%;
-} */
-.sidebar{
-    grid-area: sidebar;
-    background-color: rgb(0, 81, 255) !important;
-    overflow-y: scroll;
-
+.caterogiesactivites{
+    background-color: lightjgrey;
+    border-radius: 0.8rem;
 }
-.content1{
-    /* background-color: #d87093; */
-    grid-area: content1;
+.nav-link{
+    /* color: rgb(0, 81, 255); */
+    color: black;
+    /* text-align: center; */
+    padding-left: 25px !important;
 }
-.content2{
-    /* background-color: #d87093; */
-    grid-area: content2;
+.nav-link:hover{
+    background-color: #001a2f;
+    color: #ffffff !important;
+    border-radius: 50px;
 }
-.content3{
-    /* background-color: #d87093; */
-    grid-area: content3;
+.dropdown{
+    margin-right: 3rem !important;
 }
-.content4{
-    /* background-color: #d87093; */
-    grid-area: content4;
+.active{
+    background-color: #001a2f;
+    border-radius: 50px;
 }
-footer{
-    /* background-color: rgb(0, 81, 255); */
-    grid-area: footer;
+.number{
+    font-size: 25px;
 }
-.div1{
-    /* padding-top: 3rem; */
-    /* padding-bottom: 6rem; */
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px 5px rgb(0, 81, 255);
-    width: 17rem;
-    border-radius: 3rem;
-}
-.div2{
-    /* padding-top: 3rem; */
-    /* padding-bottom: 6rem; */
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px 5px rgb(0, 81, 255);
-    width: 17rem;
-    border-radius: 3rem;
-}
-.div3{
-    /* padding-top: rem; */
-    /* padding-bottom: 4rem; */
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px 5px rgb(0, 81, 255);
-    width: 17rem;
-    border-radius: 3rem;
-}
-.div4{
-    /* padding-top: 3rem; */
-    /* padding-bottom: 4rem; */
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px 5px rgb(0, 81, 255);
-    width: 17rem;
-    border-radius: 3rem;
+.active a{
+    color: #ffffff !important;
 }

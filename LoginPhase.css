@@ -3,11 +3,13 @@
     padding: 0px;
 }
 body{
-    background-image: url(./images.jpg);
+    background-image: url(./Quiz0.png);
+    background-size: cover;
 }
 .container{
-    margin: 7vh;
+    /* margin: 7vh; */
     /* height: 85vh; */
+    width: 100%;
     background-color: #001a2f;
     box-shadow: 5px 5px 5px 5px #001a2f;
     
@@ -23,6 +25,7 @@ body{
 }
 .bestfree{
     font-size: 25px;
+    text-align: center;
     color: rgb(0, 81, 255) !important;
 }
 .d{
@@ -31,6 +34,11 @@ body{
     border-bottom-right-radius: 100%;
     /* background-image: url(./QUIZ\ text); */
     /* background-size: cover; */
+}
+.container1{
+    background-image: url(./Quiz0.png);
+    background-size: cover;
+    width: 100%;
 }
     /* .create{
         color: rgb(0, 81, 255);

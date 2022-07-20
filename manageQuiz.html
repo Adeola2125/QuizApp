@@ -62,7 +62,7 @@
                 <h6 style="background-color: #ffffff; font-size: small;" class="text-center text-muted mt-5"><span style="border-radius: 15%;">MODULE</span></h6>
               <ul class="navbar-nav pt-3 text-dark" style="font-size: 14px;">
                   <li class="nav-item">
-                      <a class="nav-link" href="./dashboard2.html"><i class="fa fa-home mr-2" aria-hidden="true"></i>DASHBOARD</a>
+                      <a class="nav-link" href="./dashboard.html"><i class="fa fa-home mr-2" aria-hidden="true"></i>DASHBOARD</a>
                     </li>
                   <li class="nav-item">
                     <a class="nav-link" href="./categoryModule.html"><i class="fa fa-bars" aria-hidden="true"></i> MANAGE CATEGORY <span class="sr-only">(current)</span></a>
@@ -75,6 +75,11 @@
                   </li>
                 </ul>
                 <hr style="background-color: #001a2f;">
+                <ul class="navbar-nav text-dark" style="font-size: 14px;">
+                  <li class="nav-item">
+                    <a class="nav-link" href="./quizHistory.html"><i class="fa fa-certificate" aria-hidden="true"></i> QUIZ HISTORY</a>
+                  </li>
+                </ul>
             </div>
               <div class="col-md-10 pb-4 text-white" style="background-color: #001a2f;">
                   <div class="row text-white">
@@ -185,23 +190,22 @@
                       </div>
                   </div> 
                   </div>
-                 <div class="overflow-x: auto;">
-                  <table class="col-sm-12" border="1" cellspacing="0" style="border-color: white;" id ="">
-                    <thead>
-                        <tr >
-                            <th>S/N</th>
-                            <th>Name</th>
-                            <th>Questions</th>
-                            <th>Answers</th>
-                            <th>Correct Answers</th>
-                            <th>Action</th>
-                            <!-- <th>Delete</th>
-                            <th>Edit</th> -->
-                        </tr>
-                    </thead>
+                 
+                
+                </div>
+                <div class="table table-responsive-sm text-white" >
+                  <table style="height: 10% !important;">
+                    <tr>
+                      <th>S/N</th>
+                      <th>Name</th>
+                      <th>Questions</th>
+                      <th>Answers</th>
+                      <th>Correct Answers</th>
+                      <th>Action</th>
+                    </tr>
                     <tbody id="toutput">
-                         <!-- The Modal -->
-                      <div class="modal modal" id="myEditModal">
+                       <!-- The Modal -->
+                        <div class="modal modal" id="myEditModal">
                           <div class="modal-dialog">
                           <div class="modal-content">
                           
@@ -245,8 +249,7 @@
                           </div>
                       </div> 
                     </tbody>
-                </table>
-                 </div>
+                  </table>
                 </div>
               </div>
           </div>
@@ -1037,8 +1040,7 @@ function seedQuizDataFunction(){
                   <td>${myQuiz[i].question}</td>
                   <td>${optionName}</td>
                   <td><span class="badge badge-primary">${checkCorrectAnswer}</span></td>
-                  <td class=" d-flex">
-                    <i class="fa fa-th" aria-hidden="true" style="font-size: 22px; margin: auto;></i>
+                  <td>
                     <div class="dropdown">
                       <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">
                         
@@ -1049,9 +1051,9 @@ function seedQuizDataFunction(){
                       </div>
                     </div>
                   </td>
-                 
+                </tr>
                   
-              </tr>
+              
          `
          }
         

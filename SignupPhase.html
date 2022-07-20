@@ -189,7 +189,8 @@
           email: "admin@admin.com",
           phoneNo: 08121253150,
           password: 123456789,
-          userType: 'admin'
+          userType: 'admin',
+          id: Math.floor(Math.random() * 100000)
         })
       }
       localStorage.setItem('users', JSON.stringify(records))
@@ -200,7 +201,8 @@
             email: inputEmail.value,
             phoneNo: phoneNo.value,
             password: passwordInput.value,
-            userType: 'user'
+            userType: 'user',
+            id: Math.floor(Math.random() * 100000)
         }
         var localStorageData = JSON.parse(localStorage.getItem("users"))
         let arr = [];

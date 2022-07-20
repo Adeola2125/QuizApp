@@ -64,6 +64,4 @@ table{
 textarea{
     resize: none;
 }
-table{
-    overflow-x: auto;
-}
+tr:nth-child(odd){background-color: #191c24}
