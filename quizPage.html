@@ -149,7 +149,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text" style="border-right-bottom-radius: 100px;">Option ${a + 1}</div>
                         </div>
-                        <label class="radio"> <input type="radio" name="gridRadios${i}" id="gridRadios${i}${a}" value="${Answers[a]}"><span class="text-white">${Answers[a]}</span>
+                        <label class="radio"> <input type="radio" name="gridRadios${i}" onclick="fuc(${a})" id="gridRadios${i}${a}" value="${Answers[a]}"><span class="text-white">${Answers[a]}</span>
                             <i id="check" class="fa fa-check d-none" aria-hidden="true"></i>
                         </label>                                   
                     </div>
@@ -158,6 +158,7 @@
         }
        }
     };
+   
 
     formal.addEventListener("submit", endQuiz)
     function endQuiz(e){

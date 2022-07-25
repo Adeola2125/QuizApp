@@ -9,7 +9,7 @@
     padding: 0px;
 }
 body{
-    background-image: url(./images.jpg);
+    background-image: url(./Quiz0.png);
 }
 .navbar-brand{
     letter-spacing: 5px;
@@ -21,6 +21,7 @@ body{
 .bestfree{
     font-size: 25px;
 }
+
 .container1{
     /* height: 85vh; */
     border-top-left-radius: 100%;
